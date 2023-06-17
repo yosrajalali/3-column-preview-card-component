@@ -1,0 +1,146 @@
+@import url('https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700&family=Lexend+Deca&display=swap');
+:root {
+  /* ### Primary */
+  --Bright-orange: hsl(31, 77%, 52%);
+  --Dark-cyan: hsl(184, 100%, 22%);
+  --Very-dark-cyan: hsl(179, 100%, 13%);
+  /* ### Neutral */
+  --Transparent-white: hsla(0, 0%, 100%, 0.75);
+  --Very-light-gray: hsl(0, 0%, 95%);
+}
+
+/* RESET */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+picture,
+img,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Lexend Deca', sans-serif;
+  background: var(--Very-light-gray);
+}
+
+.cards {
+  display: grid;
+  grid-template-areas: 'one' 'two' 'three';
+  width: min(90%, 915px);
+  margin: 3rem 0;
+}
+
+.card {
+  padding: 3rem 2.5rem;
+}
+
+.card__one {
+  background: var(--Bright-orange);
+  grid-area: one;
+  border-radius: 0.5rem 0.5rem 0 0;
+}
+
+.card__two {
+  background: var(--Dark-cyan);
+  grid-area: two;
+}
+
+.card__three {
+  background: var(--Very-dark-cyan);
+  grid-area: three;
+  border-radius: 0 0 0.5rem 0.5rem;
+}
+
+.heading {
+  color: var(--Very-light-gray);
+  text-transform: uppercase;
+  margin: 2rem 0;
+  font-family: 'Big Shoulders Display', cursive;
+  font-weight: 700;
+  font-size: 2.5rem;
+}
+
+.text {
+  color: var(--Transparent-white);
+  margin-bottom: 1.5rem;
+  line-height: 1.5;
+  font-size: 1rem;
+}
+
+.btn {
+  background: var(--Very-light-gray);
+  border: 2px solid var(--Transparent-white);
+  text-transform: capitalize;
+  width: 9rem;
+  height: 3rem;
+  border-radius: 5rem;
+  font-size: 1rem;
+}
+
+.btn:hover {
+  background: transparent;
+  color: var(--Transparent-white);
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.btn:hover .btn__one .btn__two .btn__three {
+  color: white;
+}
+
+.btn__one {
+  color: var(--Bright-orange);
+}
+
+.btn__two {
+  color: var(--Dark-cyan);
+}
+
+.btn__three {
+  color: var(--Very-dark-cyan);
+}
+
+@media only screen and (min-width: 48em) {
+  .cards {
+    grid-template-areas: 'one one' 'two three';
+  }
+  .text {
+    margin-bottom: 5rem;
+    line-height: 2;
+  }
+  .card__one {
+    border-radius: 0.5rem 0 0 0.5rem;
+  }
+  .card__three {
+    border-radius: 0 0.5rem 0.5rem 0;
+  }
+}
+
+@media only screen and (min-width: 54em) {
+  .cards {
+    grid-template-areas: 'one two three';
+  }
+  .text {
+    margin-bottom: 5rem;
+    line-height: 2;
+  }
+  .card__one {
+    border-radius: 0.5rem 0 0 0.5rem;
+  }
+  .card__three {
+    border-radius: 0 0.5rem 0.5rem 0;
+  }
+}
